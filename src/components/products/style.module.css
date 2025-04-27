@@ -20,7 +20,7 @@
     /* Keep the buttons within the container */
 }
 
-.container button {
+.container>button {
     z-index: 10;
     border-radius: 0;
     background-color: #ec6e25;
