@@ -1,0 +1,13 @@
+.categorie {
+    font: 400 14px / 1.35 Montserrat,
+        Helvetica Neue,
+        Verdana,
+        Arial,
+        sans-serif;
+    color: #222;
+}
+
+.categorie:hover {
+    color: #ec6e25;
+    cursor: pointer;
+}

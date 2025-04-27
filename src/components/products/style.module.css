@@ -1,0 +1,146 @@
+.caroussel {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px 10px;
+    /* Add horizontal padding */
+    gap: 20px;
+    scroll-snap-type: x none;
+    scrollbar-width: none;
+    width: 100%;
+    /* Ensure it takes full width */
+    /* For better scrollbar visibility */
+    box-sizing: border-box;
+    position: relative;
+    scroll-behavior: smooth;
+    /* Smooth scrolling */
+}
+
+.container {
+    position: relative;
+    /* Keep the buttons within the container */
+}
+
+.container button {
+    z-index: 10;
+    border-radius: 0;
+    background-color: #ec6e25;
+    color: white;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Center vertically */
+    transition: transform 0.3s ease,
+        opacity 0.3s ease;
+    /* Smooth transition */
+    opacity: 0;
+    /* Initially hidden */
+}
+
+/* Left Button (slides from the left) */
+.button_prev {
+    left: -40px;
+
+    /* Fade in */
+    /* Off-screen to the left initially */
+}
+
+/* Right Button (starts off-screen to the right) */
+.button_next {
+    right: -40px;
+    /* Fade in */
+    /* Off-screen to the right initially */
+}
+
+/* Hover Effect: Slide buttons into view */
+.container:hover .button_prev {
+    transform: translateY(-50%) translateX(40px);
+    opacity: 1;
+    /* Slide in from the left */
+}
+
+.container:hover .button_next {
+    transform: translateY(-50%) translateX(-40px);
+    /* Slide in from the right */
+    opacity: 1;
+}
+
+.product {
+    flex: 0 0 auto;
+    /* Prevent shrinking */
+    width: 226px;
+    /* Fixed width */
+    height: 429px;
+    /* Fixed height */
+    margin-right: 20px;
+    /* Space between products */
+    background: white;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    /* Include padding/margin in width calculation */
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 224px;
+    overflow: hidden;
+}
+
+.categoryImage {
+    width: 100%;
+    height: 224px;
+    object-fit: cover;
+    display: block;
+}
+
+.product:hover .overlay {
+    opacity: 0.7;
+}
+
+.product:hover .buttons {
+    right: 10px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.buttons {
+    position: absolute;
+    top: 50%;
+    right: -150px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2;
+    transition: right 0.5s ease;
+}
+
+.buttons button {
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.5s;
+    width: 40px;
+    height: 40px;
+    color: black;
+}
+
+.buttons button:hover {
+    background-color: #ec6e25;
+    color: white;
+}

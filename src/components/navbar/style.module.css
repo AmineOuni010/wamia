@@ -1,0 +1,21 @@
+.navbar {
+    background-color: #131921;
+    color: white;
+}
+
+.navbar__bottom {
+    background-color: #232f40;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+
+}
+
+.navbar__bottom_link {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font: 500 18px / 1.35 Poppins, Helvetica Neue, Verdana, Arial, sans-serif !important;
+    padding: 12px 20px;
+}
